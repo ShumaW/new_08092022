@@ -14,6 +14,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0%;
+            display: flex;
         }
 
         .side {
@@ -102,7 +103,7 @@
 
         main {
             margin-left: 200px;
-            width: 55%;
+            width: 65%;
             height: 100vh;
             background: #ffffff;
             border-right: solid #efefef 1px;
@@ -238,9 +239,151 @@
             width: 255px;
             background: #cc70d8;
         }
+
         .object__pic-four {
             width: 255px;
-            background:#ffc136;
+            background: #ffc136;
+        }
+
+        .right {
+            width: 35%;
+            height: 100vh;
+
+        }
+
+        .calendar {}
+
+        .calendar__text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 50px 0 50px;
+        }
+
+        .calendar__month {
+            height: 35px;
+            width: 120px;
+            border: solid #f3f3f3 1px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .calendar__month-item {
+            font-weight: 400;
+        }
+
+        .calendar__item-day,
+        .calendar__number {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: -20px;
+            margin: 0 50px -25px 50px;
+        }
+
+        .calendar__item-one {
+            font-weight: 500;
+        }
+
+        .calendar__item-two {
+            font-weight: 600;
+            color: #bbbec6;
+        }
+
+        .calendar__item-three {
+            font-weight: 600;
+        }
+
+        
+
+        .upcoming__text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 35px 25px 0 40px;
+        }
+
+        .upcoming__text-font {
+            font-weight: 700;
+        }
+
+        .upcoming__hours-one {
+            margin-left: 40px;
+            font-weight: 600;
+            color: #bbbec6;
+        }
+
+        .upcoming__hours {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .upcoming__hours-les {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: #f9f9f9;
+            height: 55px;
+            width: 250px;
+
+        }
+
+        .upcoming__hours-magic {
+            font-size: 25px;
+            background: #ffb101;
+            color: #ffffff;
+            height: 45px;
+            width: 45px;
+            margin-left: 10px;
+        }
+
+        .upcoming__hours-edit {
+            font-size: 25px;
+            background: #686df6;
+            color: #ffffff;
+            height: 45px;
+            width: 45px;
+            margin-left: 10px;
+        }
+
+        .upcoming__hours-group {
+            font-size: 25px;
+            background: #cc70d8;
+            color: #ffffff;
+            height: 45px;
+            width: 45px;
+            margin-left: 10px;
+        }
+
+
+        .is-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upcoming__hours-timelesson {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 10px;
+        }
+
+        .upcoming__hours-lt {
+            font-size: xx-small;
+            color: #a7a6a7;
+        }
+
+        .upcoming__hours-nameles {
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .upcoming__hours-lesson {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
         }
     </style>
 </head>
@@ -382,7 +525,136 @@
                 </div>
             </div>
         </section>
+
     </main>
+    <aside class="right">
+        <section>
+            <div class="calendar">
+                <div class="calendar__text">
+                    <h3>Schedule</h3>
+                    <span class="calendar__month">
+                        <h5 class="calendar__month-item">Month</h5>
+                        <i class="las la-angle-down"></i>
+                    </span>
+                </div>
+                <div class="calendar__item">
+                    <span class="calendar__item-day">
+                        <h5 class="calendar__item-one">Sun</h5>
+                        <h5 class="calendar__item-one">Mon</h5>
+                        <h5 class="calendar__item-one">Tue</h5>
+                        <h5 class="calendar__item-one">Wed</h5>
+                        <h5 class="calendar__item-one">Thu</h5>
+                        <h5 class="calendar__item-one">Fri</h5>
+                        <h5 class="calendar__item-one">Sat</h5>
+                    </span>
+                    <span class="calendar__number">
+                        <h5 class="calendar__item-two">27</h5>
+                        <h5 class="calendar__item-two">28</h5>
+                        <h5 class="calendar__item-two">29</h5>
+                        <h5 class="calendar__item-two">30</h5>
+                        <h5 class="calendar__item-two">31</h5>
+                        <h5 class="calendar__item-three">1</h5>
+                        <h5 class="calendar__item-three">2</h5>
+
+                    </span>
+                    <span class="calendar__number">
+                        <h5 class="calendar__item-three">&emsp;3</h5>
+                        <h5 class="calendar__item-three">&emsp;4</h5>
+                        <h5 class="calendar__item-three">&emsp;5</h5>
+                        <h5 class="calendar__item-three">&emsp;6</h5>
+                        <h5 class="calendar__item-three">&emsp;7</h5>
+                        <h5 class="calendar__item-three">&emsp;8</h5>
+                        <h5 class="calendar__item-three">&emsp;9</h5>
+
+                    </span>
+                    <span class="calendar__number">
+                        <h5 class="calendar__item-three">&ensp;10</h5>
+                        <h5 class="calendar__item-three">&emsp;11</h5>
+                        <h5 class="calendar__item-three">&emsp;12</h5>
+                        <h5 class="calendar__item-three">&emsp;13</h5>
+                        <h5 class="calendar__item-three">&ensp;14</h5>
+                        <h5 class="calendar__item-three">&ensp;15</h5>
+                        <h5 class="calendar__item-three">&ensp;16</h5>
+
+                    </span>
+                    <span class="calendar__number">
+                        <h5 class="calendar__item-three">&ensp;17</h5>
+                        <h5 class="calendar__item-three">&emsp;18</h5>
+                        <h5 class="calendar__item-three">&emsp;19</h5>
+                        <h5 class="calendar__item-three">&emsp;20</h5>
+                        <h5 class="calendar__item-three">&ensp;21</h5>
+                        <h5 class="calendar__item-three">&ensp;22</h5>
+                        <h5 class="calendar__item-three">&ensp;23</h5>
+
+                    </span>
+                    <span class="calendar__number">
+                        <h5 class="calendar__item-three">&ensp;24</h5>
+                        <h5 class="calendar__item-three">&emsp;25</h5>
+                        <h5 class="calendar__item-three">&emsp;26</h5>
+                        <h5 class="calendar__item-three">&emsp;27</h5>
+                        <h5 class="calendar__item-three">&ensp;28</h5>
+                        <h5 class="calendar__item-three">&ensp;29</h5>
+                        <h5 class="calendar__item-three">&ensp;30</h5>
+
+                    </span>
+
+
+                </div>
+            </div>
+            <div class="upcoming">
+                <div class="upcoming__text">
+                    <h5 class="upcoming__text-font">Upcoming</h5>
+                    <i class="las la-ellipsis-h"></i>
+                </div>
+                <div class="upcoming__hours">
+                    <div class="upcoming__hours-time">
+                        <h5 class="upcoming__hours-one">09:00</h5>
+                        <h5 class="upcoming__hours-one">10:00</h5>
+                        <h5 class="upcoming__hours-one">11:00</h5>
+                        <h5 class="upcoming__hours-one">12:00</h5>
+                        <h5 class="upcoming__hours-one">13:00</h5>
+                        <h5 class="upcoming__hours-one">14:00</h5>
+                        <h5 class="upcoming__hours-one">15:00</h5>
+                        <h5 class="upcoming__hours-one">16:00</h5>
+                        <h5 class="upcoming__hours-one">17:00</h5>
+                    </div>
+
+
+
+                    <div class="upcoming__hours-lesson">
+                        <div class="upcoming__hours-les">
+                            <i class="las la-magic upcoming__hours-magic is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">10:00 - 10:30</div>
+                                <div class="upcoming__hours-nameles">User Interface Design</div>
+                            </div>
+                        </div>
+
+                        <div class="upcoming__hours-les">
+                            <i class="las la-layer-group upcoming__hours-group is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">13:00 - 13:30</div>
+                                <div class="upcoming__hours-nameles">Programming in Java</div>
+                            </div>
+                        </div>
+
+                        <div class="upcoming__hours-les">
+                            <i class="lar la-edit upcoming__hours-edit is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">16:00 - 16:30</div>
+                                <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+        </section>
+    </aside>
 
 </body>
 
