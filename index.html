@@ -251,8 +251,6 @@
 
         }
 
-        .calendar {}
-
         .calendar__text {
             display: flex;
             justify-content: space-between;
@@ -381,9 +379,10 @@
         }
 
         .upcoming__hours-lesson {
-            display: flex;
+            /* display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-around; */
+            height: 400px;
         }
 
         .calendar1 {
@@ -392,7 +391,7 @@
             display: flex;
             flex-wrap: wrap;
             margin-left: 40px;
-    margin-right: 40px;
+            margin-right: 40px;
         }
 
         .calendar1__item {
@@ -424,6 +423,84 @@
         .calendar1__item:not(.calendar1__item--small):hover {
             background: lightgray;
             cursor: pointer;
+        }
+
+        .timeline {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+        }
+
+        .timeline__item {
+            display: flex;
+            margin-left: 40px;
+            font-weight: 600;
+            color: #bbbec6;
+        }
+
+        .timeline__line {
+            width: 270px;
+            margin-left: 10px;
+
+            color: #bdc2cb;
+            height: 2px;
+        }
+
+        /* селектры позиционирования уроков */
+        .lps900 {
+            position: relative;
+            left: 100px;
+            top: 0px;
+        }
+
+        .lps1000 {
+            position: relative;
+            left: 100px;
+            top: 50px;
+        }
+
+        .lps1100 {
+            position: relative;
+            left: 100px;
+            top: 84px;
+        }
+
+        .lps1200 {
+            position: relative;
+            left: 100px;
+            top: 126px;
+        }
+
+        .lps1300 {
+            position: relative;
+            left: 100px;
+            top: 130px;
+        }
+
+        .lps1400 {
+            position: relative;
+            left: 100px;
+            top: 210px;
+        }
+
+        .lps1500 {
+            position: relative;
+            left: 100px;
+            top: 252px;
+        }
+
+        .lps1600 {
+            position: relative;
+            left: 100px;
+            top: 220px;
+        }
+
+        .lps1700 {
+            position: relative;
+            left: 100px;
+            top: 336px;
         }
     </style>
 </head>
@@ -578,7 +655,7 @@
                     </span>
                 </div>
                 <div class="calendar__item">
-                        <ul class="calendar1">
+                    <ul class="calendar1">
                         <li class="calendar1__item calendar1__item--small">Sun</li>
                         <li class="calendar1__item calendar1__item--small">Mon</li>
                         <li class="calendar1__item calendar1__item--small">Tue</li>
@@ -627,12 +704,14 @@
 
                 </div>
             </div>
+        </section>
+        <section>
             <div class="upcoming">
                 <div class="upcoming__text">
                     <h5 class="upcoming__text-font">Upcoming</h5>
                     <i class="las la-ellipsis-h"></i>
                 </div>
-                <div class="upcoming__hours">
+                <!-- <div class="upcoming__hours">
                     <div class="upcoming__hours-time">
                         <h5 class="upcoming__hours-one">09:00</h5>
                         <h5 class="upcoming__hours-one">10:00</h5>
@@ -644,38 +723,95 @@
                         <h5 class="upcoming__hours-one">16:00</h5>
                         <h5 class="upcoming__hours-one">17:00</h5>
                     </div>
-
-
-
-                    <div class="upcoming__hours-lesson">
-                        <div class="upcoming__hours-les">
-                            <i class="las la-magic upcoming__hours-magic is-center"></i>
-                            <div class="upcoming__hours-timelesson">
-                                <div class="upcoming__hours-lt">10:00 - 10:30</div>
-                                <div class="upcoming__hours-nameles">User Interface Design</div>
-                            </div>
+                </div> -->
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__time">09:00</div>
+                        <div class="timeline__line">
+                            <hr>
                         </div>
-
-                        <div class="upcoming__hours-les">
-                            <i class="las la-layer-group upcoming__hours-group is-center"></i>
-                            <div class="upcoming__hours-timelesson">
-                                <div class="upcoming__hours-lt">13:00 - 13:30</div>
-                                <div class="upcoming__hours-nameles">Programming in Java</div>
-                            </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">10:00</div>
+                        <div class="timeline__line">
+                            <hr>
                         </div>
-
-                        <div class="upcoming__hours-les">
-                            <i class="lar la-edit upcoming__hours-edit is-center"></i>
-                            <div class="upcoming__hours-timelesson">
-                                <div class="upcoming__hours-lt">16:00 - 16:30</div>
-                                <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
-                            </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">11:00</div>
+                        <div class="timeline__line">
+                            <hr>
                         </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">12:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">13:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">14:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">15:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">16:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__time">17:00</div>
+                        <div class="timeline__line">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
 
+
+
+                <div class="upcoming__hours-lesson">
+                    <div class="upcoming__hours-les lps1000">
+                        <i class="las la-magic upcoming__hours-magic is-center"></i>
+                        <div class="upcoming__hours-timelesson">
+                            <div class="upcoming__hours-lt">10:00 - 10:30</div>
+                            <div class="upcoming__hours-nameles">User Interface Design</div>
+                        </div>
                     </div>
 
+                    <div class="upcoming__hours-les lps1300">
+                        <i class="las la-layer-group upcoming__hours-group is-center"></i>
+                        <div class="upcoming__hours-timelesson">
+                            <div class="upcoming__hours-lt">13:00 - 13:30</div>
+                            <div class="upcoming__hours-nameles">Programming in Java</div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming__hours-les lps1600">
+                        <i class="lar la-edit upcoming__hours-edit is-center"></i>
+                        <div class="upcoming__hours-timelesson">
+                            <div class="upcoming__hours-lt">16:00 - 16:30</div>
+                            <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
+                        </div>
+                    </div>
 
                 </div>
+
+
+
             </div>
 
             </div>
