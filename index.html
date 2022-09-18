@@ -17,7 +17,7 @@
             display: flex;
         }
 
-        .side {
+        .sidebar {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -28,18 +28,18 @@
             background: #f9f9f9;
         }
 
-        .side__logo {
+        .sidebar__logo {
             display: flex;
             justify-content: center;
         }
 
 
 
-        .side__list {
+        .sidebar__list {
             padding: 0;
         }
 
-        .side__list-ul {
+        .sidebar__list-ul {
             list-style: none;
             padding: 0;
 
@@ -64,7 +64,7 @@
             margin-left: -72px;
         }
 
-        .side__list-li {
+        .sidebar__list-li {
             width: 157px;
             display: flex;
             color: #9c9c9c;
@@ -72,24 +72,24 @@
             padding-left: 35px
         }
 
-        .side__list-li:hover,
-        .side__list-out:hover {
+        .sidebar__list-li:hover,
+        .sidebar__list-out:hover {
             color: black;
             border-left: solid black 2px;
 
         }
 
-        .side__icon {
+        .sidebar__icon {
             margin: 0 10px 0 0;
             font-size: 1.5rem;
         }
 
-        .side__icon-logo {
+        .sidebar__icon-logo {
             margin: 20px 10px 0 0;
             font-size: 2rem;
         }
 
-        .side__list-out {
+        .sidebar__list-out {
             display: flex;
             color: #9c9c9c;
             align-items: center;
@@ -103,11 +103,16 @@
 
         main {
             margin-left: 200px;
-            width: 65%;
+            width: calc(100% - 200 px);
             height: 100vh;
             background: #ffffff;
             border-right: solid #efefef 1px;
+            display: flex;
+            justify-content: space-between;
         }
+
+
+
 
         .user__avatar {
             width: 50px;
@@ -503,50 +508,165 @@
             left: 100px;
             top: 336px;
         }
+
+        .burger {
+            font-size: 3rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                width: 100vw;
+            }
+            .sidebar {
+                transform: translateX(calc(330px * -1));
+                transition: all .5s ease-out;
+                width: 330px;
+                height: 100vh;
+                z-index: 1;
+            }
+
+            .sidebar--open {
+                transform: none;
+            }
+
+            main {
+                margin: 0;
+                width: 100vw;
+            }
+
+            .burger {
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: block;
+                font-size: 3rem;
+                border: 1px solid;
+                transition: all .5s ease-out;
+                cursor: pointer;
+                /* только для разработки */
+            }
+
+            .burger--open {
+                left: 330px;
+            }
+
+            main {
+
+
+                height: 100vh;
+                background: #ffffff;
+                border-right: solid #efefef 1px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+
+            .user__id {
+                font-size: 1rem;
+            }
+
+            .user__avatar {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+
+            .user__search {
+                display: none;
+            }
+
+            .object {
+                margin: 0 0 14px 0 ;
+            }
+
+            .calendar {
+                margin-top: 25px;
+            }
+
+            .calendar__text {
+                display: flex;
+                margin: 0 0 0 15px;
+                align-items: center;
+                justify-content: space-around;
+                width: 350px;
+            }
+
+            .calendar1 {
+                padding: 0;
+                width: 300px;
+                display: flex;
+                margin-left: 40px;
+               
+                flex-wrap: wrap;
+            }
+
+            /* .upcoming {
+                margin-left: 25px;
+            } */
+            .object__text-lesson {
+                margin: 0;
+            }
+
+            .all {
+                width: 100%;
+                margin: 0;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-    <aside class="side">
+    <div class="burger" onclick="toggleMenu()">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#9c9c9c" stroke-width="2"
+            stroke-linecap="butt" stroke-linejoin="arcs">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+
+    </div>
+    <aside class="sidebar">
         <div>
-            <div class="side__logo">
-                <i class="lab la-staylinked side__icon-logo"></i>
+            <div class="sidebar__logo">
+                <i class="lab la-staylinked sidebar__icon-logo"></i>
                 <h1>memo</h1>
             </div>
-            <nav class="side__list ">
-                <ul class="side__list-ul">
-                    <li class="side__list-li">
-                        <i class="lar la-copy side__icon"></i>
+            <nav class="sidebar__list ">
+                <ul class="sidebar__list-ul">
+                    <li class="sidebar__list-li">
+                        <i class="lar la-copy sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Courses</h5>
                         </a>
                     </li>
-                    <li class="side__list-li">
-                        <i class="lar la-credit-card side__icon"></i>
+                    <li class="sidebar__list-li">
+                        <i class="lar la-credit-card sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Payment</h5>
                         </a>
                     </li>
-                    <li class="side__list-li">
-                        <i class="las la-comment side__icon"></i>
+                    <li class="sidebar__list-li">
+                        <i class="las la-comment sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Chat</h5>
                         </a>
                     </li>
-                    <li class="side__list-li">
-                        <i class="lar la-user side__icon"></i>
+                    <li class="sidebar__list-li">
+                        <i class="lar la-user sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Groups</h5>
                         </a>
                     </li>
-                    <li class="side__list-li">
-                        <i class="las la-graduation-cap side__icon"></i>
+                    <li class="sidebar__list-li">
+                        <i class="las la-graduation-cap sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Students</h5>
                         </a>
                     </li>
-                    <li class="side__list-li">
-                        <i class="las la-volume-down side__icon"></i>
+                    <li class="sidebar__list-li">
+                        <i class="las la-volume-down sidebar__icon"></i>
                         <a href="" class="link">
                             <h5>Support</h5>
                         </a>
@@ -555,256 +675,272 @@
                 </ul>
             </nav>
         </div>
-        <div class="side__list-out">
+        <div class="sidebar__list-out">
 
-            <i class="las la-sign-out-alt side__icon"></i>
+            <i class="las la-sign-out-alt sidebar__icon"></i>
             <a href="" class="link">
                 <h5 class="link__out">Log out</h5>
             </a>
 
         </div>
+
     </aside>
+
     <main>
-        <header class="user">
-            <div class="user__info">
-                <img src="./image/avatar6.png" alt="" class="user__avatar">
-                <div class="user__id">
-                    <h3 class="user__name">Leslie Alexander</h3>
-                    <h5 class="user__place">Los Angeles, CA</h5>
-                </div>
-            </div>
-            <div class="user__search">
-                <input type="text" placeholder="Search" class="user__search-input">
-                <i class="las la-search user__search-icon"></i>
-            </div>
-        </header>
-        <section>
-            <div class="courses">
-                <h1 class="courses__text">Courses</h1>
-                <h6>See all</h6>
-            </div>
-            <div class="all">
-                <h5 class="all__text-black">All</h5>
-                <h5 class="all__text-grey">Current</h5>
-                <h5 class="all__text-grey">Pending</h5>
-                <h5 class="all__text-grey">Complited</h5>
-            </div>
-            <div class="object">
-                <div class="object__pic-one">
-
-                </div>
-                <div class="object__text">
-                    <div class="object__text-firstline">
-                        <h6 class="object__text-prog">Programming&emsp;&emsp;&bull;</h6>
-
-                        <h6 class="object__text-date">Okt 09.2022</h6>
-                    </div>
-                    <h3>Object-Oriented Programming in Java</h3>
-
-                </div>
-            </div>
-            <div class="object object-nonepic">
-                <div class="object__text">
-
-                    <h3 class="object__text-question">How to track your course progress easly?</h3>
-
-                    <div class="object__text-firstline">
-                        <h6>Find more</h6>
-                        <i class="las la-angle-right"></i>
+        <section class="content">
+            <header class="user">
+                <div class="user__info">
+                    <img src="./image/avatar6.png" alt="" class="user__avatar">
+                    <div class="user__id">
+                        <h3 class="user__name">Leslie Alexander</h3>
+                        <h5 class="user__place">Los Angeles, CA</h5>
                     </div>
                 </div>
-            </div>
-            <div class="object">
-                <div class="object__pic-three">
-
+                <div class="user__search">
+                    <input type="text" placeholder="Search" class="user__search-input">
+                    <i class="las la-search user__search-icon"></i>
                 </div>
-                <div class="object__text">
-                    <div class="object__text-firstline">
-                        <h6 class="object__text-prog">Design&emsp;&emsp;&bull;</h6>
+            </header>
+            <section>
+                <div class="courses">
+                    <h1 class="courses__text">Courses</h1>
+                    <h6>See all</h6>
+                </div>
+                <div class="all">
+                    <h5 class="all__text-black">All</h5>
+                    <h5 class="all__text-grey">Current</h5>
+                    <h5 class="all__text-grey">Pending</h5>
+                    <h5 class="all__text-grey">Complited</h5>
+                </div>
+                <div class="object">
+                    <div class="object__pic-one">
 
-                        <h6 class="object__text-date">Sep 17.2022</h6>
                     </div>
-                    <h3>Visual Elements of User Interface Design</h3>
+                    <div class="object__text">
+                        <div class="object__text-firstline">
+                            <h6 class="object__text-prog">Programming&emsp;&emsp;&bull;</h6>
 
-                </div>
-            </div>
-            <div class="object">
-                <div class="object__pic-four">
+                            <h6 class="object__text-date">Okt 09.2022</h6>
+                        </div>
+                        <h3 class="object__text-lesson">Object-Oriented Programming in Java</h3>
 
-                </div>
-                <div class="object__text">
-                    <div class="object__text-firstline">
-                        <h6 class="object__text-prog">Design&emsp;&emsp;&bull;</h6>
-
-                        <h6 class="object__text-date">Aug 19.2022</h6>
                     </div>
-                    <h3>The Strategy of Content Marketing</h3>
-
                 </div>
-            </div>
+                <div class="object object-nonepic">
+                    <div class="object__text">
+
+                        <h3 class="object__text-question">How to track your course progress easly?</h3>
+
+                        <div class="object__text-firstline">
+                            <h6>Find more</h6>
+                            <i class="las la-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="object">
+                    <div class="object__pic-three">
+
+                    </div>
+                    <div class="object__text">
+                        <div class="object__text-firstline">
+                            <h6 class="object__text-prog">Design&emsp;&emsp;&bull;</h6>
+
+                            <h6 class="object__text-date">Sep 17.2022</h6>
+                        </div>
+                        <h3 class="object__text-lesson">Visual Elements of User Interface Design</h3>
+
+                    </div>
+                </div>
+                <div class="object">
+                    <div class="object__pic-four">
+
+                    </div>
+                    <div class="object__text">
+                        <div class="object__text-firstline">
+                            <h6 class="object__text-prog">Design&emsp;&emsp;&bull;</h6>
+
+                            <h6 class="object__text-date">Aug 19.2022</h6>
+                        </div>
+                        <h3 class="object__text-lesson">The Strategy of Content Marketing</h3>
+
+                    </div>
+                </div>
+            </section>
         </section>
+
+
+
+        <aside class="right">
+            <section>
+                <div class="calendar">
+                    <div class="calendar__text">
+                        <h3>Schedule</h3>
+                        <span class="calendar__month">
+                            <h5 class="calendar__month-item">Month</h5>
+                            <i class="las la-angle-down"></i>
+                        </span>
+                    </div>
+                    <div class="calendar__item">
+                        <ul class="calendar1">
+                            <li class="calendar1__item calendar1__item--small">Sun</li>
+                            <li class="calendar1__item calendar1__item--small">Mon</li>
+                            <li class="calendar1__item calendar1__item--small">Tue</li>
+                            <li class="calendar1__item calendar1__item--small">Wed</li>
+                            <li class="calendar1__item calendar1__item--small">Thu</li>
+                            <li class="calendar1__item calendar1__item--small">Fri</li>
+                            <li class="calendar1__item calendar1__item--small">Sat</li>
+
+                            <li class="calendar1__item calendar1__item--grey">27</li>
+                            <li class="calendar1__item calendar1__item--grey">28</li>
+                            <li class="calendar1__item calendar1__item--grey">29</li>
+                            <li class="calendar1__item calendar1__item--grey">30</li>
+                            <li class="calendar1__item calendar1__item--grey">31</li>
+                            <li class="calendar1__item ">1</li>
+                            <li class="calendar1__item">2</li>
+                            <li class="calendar1__item">3</li>
+                            <li class="calendar1__item">4</li>
+                            <li class="calendar1__item">5</li>
+                            <li class="calendar1__item calendar1__item--active">6</li>
+                            <li class="calendar1__item">7</li>
+                            <li class="calendar1__item">8</li>
+                            <li class="calendar1__item">9</li>
+                            <li class="calendar1__item">10</li>
+                            <li class="calendar1__item">11</li>
+                            <li class="calendar1__item">12</li>
+                            <li class="calendar1__item">13</li>
+                            <li class="calendar1__item">14</li>
+                            <li class="calendar1__item">15</li>
+                            <li class="calendar1__item">16</li>
+                            <li class="calendar1__item">17</li>
+                            <li class="calendar1__item">18</li>
+                            <li class="calendar1__item">19</li>
+                            <li class="calendar1__item">20</li>
+                            <li class="calendar1__item">21</li>
+                            <li class="calendar1__item">22</li>
+                            <li class="calendar1__item">23</li>
+                            <li class="calendar1__item">24</li>
+                            <li class="calendar1__item">25</li>
+                            <li class="calendar1__item">26</li>
+                            <li class="calendar1__item">27</li>
+                            <li class="calendar1__item">28</li>
+                            <li class="calendar1__item">29</li>
+                            <li class="calendar1__item">30</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="upcoming">
+                    <div class="upcoming__text">
+                        <h5 class="upcoming__text-font">Upcoming</h5>
+                        <i class="las la-ellipsis-h"></i>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__time">09:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">10:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">11:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">12:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">13:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">14:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">15:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">16:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__time">17:00</div>
+                            <div class="timeline__line">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="upcoming__hours-lesson">
+                        <div class="upcoming__hours-les lps1000">
+                            <i class="las la-magic upcoming__hours-magic is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">10:00 - 10:30</div>
+                                <div class="upcoming__hours-nameles">User Interface Design</div>
+                            </div>
+                        </div>
+
+                        <div class="upcoming__hours-les lps1300">
+                            <i class="las la-layer-group upcoming__hours-group is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">13:00 - 13:30</div>
+                                <div class="upcoming__hours-nameles">Programming in Java</div>
+                            </div>
+                        </div>
+
+                        <div class="upcoming__hours-les lps1600">
+                            <i class="lar la-edit upcoming__hours-edit is-center"></i>
+                            <div class="upcoming__hours-timelesson">
+                                <div class="upcoming__hours-lt">16:00 - 16:30</div>
+                                <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                </div>
+            </section>
+        </aside>
 
     </main>
-    <aside class="right">
-        <section>
-            <div class="calendar">
-                <div class="calendar__text">
-                    <h3>Schedule</h3>
-                    <span class="calendar__month">
-                        <h5 class="calendar__month-item">Month</h5>
-                        <i class="las la-angle-down"></i>
-                    </span>
-                </div>
-                <div class="calendar__item">
-                    <ul class="calendar1">
-                        <li class="calendar1__item calendar1__item--small">Sun</li>
-                        <li class="calendar1__item calendar1__item--small">Mon</li>
-                        <li class="calendar1__item calendar1__item--small">Tue</li>
-                        <li class="calendar1__item calendar1__item--small">Wed</li>
-                        <li class="calendar1__item calendar1__item--small">Thu</li>
-                        <li class="calendar1__item calendar1__item--small">Fri</li>
-                        <li class="calendar1__item calendar1__item--small">Sat</li>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.querySelector('.sidebar');
+            var burger = document.querySelector('.burger');
 
-                        <li class="calendar1__item calendar1__item--grey">27</li>
-                        <li class="calendar1__item calendar1__item--grey">28</li>
-                        <li class="calendar1__item calendar1__item--grey">29</li>
-                        <li class="calendar1__item calendar1__item--grey">30</li>
-                        <li class="calendar1__item calendar1__item--grey">31</li>
-                        <li class="calendar1__item ">1</li>
-                        <li class="calendar1__item">2</li>
-                        <li class="calendar1__item">3</li>
-                        <li class="calendar1__item">4</li>
-                        <li class="calendar1__item">5</li>
-                        <li class="calendar1__item calendar1__item--active">6</li>
-                        <li class="calendar1__item">7</li>
-                        <li class="calendar1__item">8</li>
-                        <li class="calendar1__item">9</li>
-                        <li class="calendar1__item">10</li>
-                        <li class="calendar1__item">11</li>
-                        <li class="calendar1__item">12</li>
-                        <li class="calendar1__item">13</li>
-                        <li class="calendar1__item">14</li>
-                        <li class="calendar1__item">15</li>
-                        <li class="calendar1__item">16</li>
-                        <li class="calendar1__item">17</li>
-                        <li class="calendar1__item">18</li>
-                        <li class="calendar1__item">19</li>
-                        <li class="calendar1__item">20</li>
-                        <li class="calendar1__item">21</li>
-                        <li class="calendar1__item">22</li>
-                        <li class="calendar1__item">23</li>
-                        <li class="calendar1__item">24</li>
-                        <li class="calendar1__item">25</li>
-                        <li class="calendar1__item">26</li>
-                        <li class="calendar1__item">27</li>
-                        <li class="calendar1__item">28</li>
-                        <li class="calendar1__item">29</li>
-                        <li class="calendar1__item">30</li>
-                    </ul>
-
-
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="upcoming">
-                <div class="upcoming__text">
-                    <h5 class="upcoming__text-font">Upcoming</h5>
-                    <i class="las la-ellipsis-h"></i>
-                </div>
-                <div class="timeline">
-                    <div class="timeline__item">
-                        <div class="timeline__time">09:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">10:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">11:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">12:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">13:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">14:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">15:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">16:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="timeline__item">
-                        <div class="timeline__time">17:00</div>
-                        <div class="timeline__line">
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="upcoming__hours-lesson">
-                    <div class="upcoming__hours-les lps1000">
-                        <i class="las la-magic upcoming__hours-magic is-center"></i>
-                        <div class="upcoming__hours-timelesson">
-                            <div class="upcoming__hours-lt">10:00 - 10:30</div>
-                            <div class="upcoming__hours-nameles">User Interface Design</div>
-                        </div>
-                    </div>
-
-                    <div class="upcoming__hours-les lps1300">
-                        <i class="las la-layer-group upcoming__hours-group is-center"></i>
-                        <div class="upcoming__hours-timelesson">
-                            <div class="upcoming__hours-lt">13:00 - 13:30</div>
-                            <div class="upcoming__hours-nameles">Programming in Java</div>
-                        </div>
-                    </div>
-
-                    <div class="upcoming__hours-les lps1600">
-                        <i class="lar la-edit upcoming__hours-edit is-center"></i>
-                        <div class="upcoming__hours-timelesson">
-                            <div class="upcoming__hours-lt">16:00 - 16:30</div>
-                            <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-            </div>
-
-            </div>
-        </section>
-    </aside>
+            sidebar.classList.toggle('sidebar--open');
+            burger.classList.toggle('burger--open');
+        }
+    </script>
 
 </body>
 
