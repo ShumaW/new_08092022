@@ -33,8 +33,6 @@
             justify-content: center;
         }
 
-
-
         .sidebar__list {
             padding: 0;
         }
@@ -76,7 +74,6 @@
         .sidebar__list-out:hover {
             color: black;
             border-left: solid black 2px;
-
         }
 
         .sidebar__icon {
@@ -96,23 +93,18 @@
             justify-content: space-between;
             margin: 0 35px 0 -20px;
             width: 106px;
-
             padding-left: 23px;
-
         }
 
         main {
             margin-left: 200px;
-            width: calc(100% - 200 px);
+            width: calc(100% - 200px);
             height: 100vh;
             background: #ffffff;
             border-right: solid #efefef 1px;
             display: flex;
             justify-content: space-between;
         }
-
-
-
 
         .user__avatar {
             width: 50px;
@@ -253,7 +245,6 @@
         .right {
             width: 35%;
             height: 100vh;
-
         }
 
         .calendar__text {
@@ -297,8 +288,6 @@
             font-weight: 600;
         }
 
-
-
         .upcoming__text {
             display: flex;
             justify-content: space-between;
@@ -329,7 +318,6 @@
             background: #f9f9f9;
             height: 55px;
             width: 250px;
-
         }
 
         .upcoming__hours-magic {
@@ -409,7 +397,6 @@
             align-items: center;
             font-weight: 600;
             font-size: .8rem;
-
         }
 
         .calendar1__item--small {
@@ -430,7 +417,6 @@
             cursor: pointer;
         }
 
-
         .timeline {
             height: 400px;
             display: flex;
@@ -449,7 +435,6 @@
         .timeline__line {
             width: 270px;
             margin-left: 10px;
-
             color: #bdc2cb;
             height: 2px;
         }
@@ -518,6 +503,7 @@
             body {
                 width: 100vw;
             }
+
             .sidebar {
                 transform: translateX(calc(330px * -1));
                 transition: all .5s ease-out;
@@ -552,8 +538,6 @@
             }
 
             main {
-
-
                 height: 100vh;
                 background: #ffffff;
                 border-right: solid #efefef 1px;
@@ -577,7 +561,7 @@
             }
 
             .object {
-                margin: 0 0 14px 0 ;
+                margin: 0 0 14px 0;
             }
 
             .calendar {
@@ -597,13 +581,9 @@
                 width: 300px;
                 display: flex;
                 margin-left: 40px;
-               
                 flex-wrap: wrap;
             }
 
-            /* .upcoming {
-                margin-left: 25px;
-            } */
             .object__text-lesson {
                 margin: 0;
             }
@@ -612,7 +592,6 @@
                 width: 100%;
                 margin: 0;
             }
-
         }
     </style>
 </head>
@@ -671,7 +650,6 @@
                             <h5>Support</h5>
                         </a>
                     </li>
-
                 </ul>
             </nav>
         </div>
@@ -683,7 +661,6 @@
             </a>
 
         </div>
-
     </aside>
 
     <main>
@@ -758,7 +735,6 @@
                     <div class="object__text">
                         <div class="object__text-firstline">
                             <h6 class="object__text-prog">Design&emsp;&emsp;&bull;</h6>
-
                             <h6 class="object__text-date">Aug 19.2022</h6>
                         </div>
                         <h3 class="object__text-lesson">The Strategy of Content Marketing</h3>
@@ -768,9 +744,7 @@
             </section>
         </section>
 
-
-
-        <aside class="right">
+        <div class="right">
             <section>
                 <div class="calendar">
                     <div class="calendar__text">
@@ -826,17 +800,17 @@
                             <li class="calendar1__item">29</li>
                             <li class="calendar1__item">30</li>
                         </ul>
-
-
                     </div>
                 </div>
             </section>
             <section>
                 <div class="upcoming">
+
                     <div class="upcoming__text">
                         <h5 class="upcoming__text-font">Upcoming</h5>
                         <i class="las la-ellipsis-h"></i>
                     </div>
+
                     <div class="timeline">
                         <div class="timeline__item">
                             <div class="timeline__time">09:00</div>
@@ -894,9 +868,8 @@
                         </div>
                     </div>
 
-
-
                     <div class="upcoming__hours-lesson">
+
                         <div class="upcoming__hours-les lps1000">
                             <i class="las la-magic upcoming__hours-magic is-center"></i>
                             <div class="upcoming__hours-timelesson">
@@ -920,23 +893,17 @@
                                 <div class="upcoming__hours-nameles">The Strategy of Marketing</div>
                             </div>
                         </div>
-
                     </div>
 
-
-
                 </div>
 
-                </div>
             </section>
-        </aside>
-
+        </div>
     </main>
     <script>
         function toggleMenu() {
             var sidebar = document.querySelector('.sidebar');
             var burger = document.querySelector('.burger');
-
             sidebar.classList.toggle('sidebar--open');
             burger.classList.toggle('burger--open');
         }
